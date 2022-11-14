@@ -88,6 +88,7 @@ export function Tasks() {
 
 				{tasks.map(task => (
 					<Task
+						key={task.id}
 						task={task}
 						onChangeIsCompleted={handleToggleTaskCompleted}
 						onDeleteTask={handleRemoveTask}

@@ -11,6 +11,7 @@
 	max-width: 46rem;
 	height: 3.375rem;
 	position: absolute;
+	inset: 0;
 	top: calc(-3.375rem / 2);
 
 	display: flex;
@@ -21,6 +22,7 @@
 .newTaskForm input {
 	flex: 1;
 	height: 100%;
+	max-height: 3.25rem;
 	padding: 0.5rem 1rem;
 	background-color: var(--gray-500);
 	border: 1px solid var(--gray-700);
@@ -39,6 +41,7 @@
 
 .newTaskForm button {
 	height: 100%;
+	max-height: 3.25rem;
 	border: none;
 	border-radius: 8px;
 	padding: 1rem;
@@ -59,9 +62,20 @@
 	background-color: var(--blue);
 }
 
-.tasksHeader {
-	padding-top: 5.6875rem;
+.tasks {
 	width: 100%;
+	height: auto;
+	padding-bottom: 5rem;
+
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.tasksHeader {
+	width: 100%;
+	padding-top: 5.6875rem;
+
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -90,13 +104,37 @@
 	line-height: 0.9375rem;
 }
 
-.tasks {
-	width: 100%;
-	height: auto;
-	padding-top: 1.5rem;
-	padding-bottom: 5rem;
+@media (max-width: 1024px) {
+	html,
+	body {
+		font-size: 93.75%; /* 1rem = 15px */
+	}
+}
 
-	display: flex;
-	flex-direction: column;
-	gap: 0.75rem;
+@media screen and (max-width: 760px) {
+	.container,
+	.newTaskForm {
+		padding: 0 1rem;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.newTaskForm {
+		height: auto;
+		row-gap: 0.5rem;
+		flex-direction: column;
+	}
+
+	.newTaskForm input {
+		width: 100%;
+	}
+
+	.newTaskForm button {
+		width: 100%;
+		justify-content: center;
+	}
+
+	.tasksHeader {
+		padding-top: 8.75rem;
+	}
 }
