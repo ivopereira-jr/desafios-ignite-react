@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { darken } from 'polished';
 
 import { BaseTag } from '../CatalogCoffees/styles';
 
@@ -72,49 +71,16 @@ export const CoffeeCardFooter = styled.footer`
   }
 `;
 
-export const ActionsToCart = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-`;
-
-export const AmountInputContainer = styled.div`
-  width: 5.625rem;
-  height: 2.375rem;
-  padding: 0.5rem;
-  border-radius: 6px;
-  background-color: ${({ theme }) => theme.colors['base-button']};
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-
-  input {
-    width: 100%;
-    border: none;
-    background: none;
-    outline: none;
-    text-align: center;
-    color: ${({ theme }) => theme.colors['base-title']};
-
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-    }
-  }
-`;
-
-export const IconContainer = styled.button`
-  color: ${({ theme }) => theme.colors['brand-purple']};
-  background-color: transparent;
-`;
-
-export const AddCoffeeToCart = styled.button`
-  height: 2.375rem;
+export const BaseButtonCoffeeCard = styled.button`
+  height: 100%;
   border-radius: 6px;
   padding: 0.5rem;
+  transition: background-color 400ms ease;
+`;
+
+export const AddCoffeeToCart = styled(BaseButtonCoffeeCard)`
   color: ${({ theme }) => theme.colors['base-card']};
   background-color: ${({ theme }) => theme.colors['brand-purple-dark']};
-  transition: background-color 400ms ease;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors['brand-purple']};

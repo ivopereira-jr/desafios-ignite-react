@@ -23,6 +23,16 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
   }
 
+  input {
+    border: none;
+    outline: none;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+  }
+
   button {
     border: 0;
     cursor: pointer;
@@ -30,6 +40,19 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: .5rem;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.colors['base-button']}
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: ${({ theme }) => theme.colors['brand-yellow']}
   }
 
   .container {

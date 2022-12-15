@@ -4,7 +4,7 @@ export const CatalogCoffeesContainer = styled.section`
   width: 100%;
   height: auto;
   margin-top: 2rem;
-  margin-bottom: 4rem;
+  padding-bottom: 7.5rem;
   display: flex;
   flex-direction: column;
 `;

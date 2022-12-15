@@ -21,7 +21,7 @@ export function Header() {
           Porto Alegre, RS
         </S.HeaderButtonLocation>
 
-        <NavLink to='/cart'>
+        <NavLink to='/checkout'>
           <S.HeaderButtonCart variant='yellow'>
             <ShoppingCart size={20} weight='fill' />
             <span>0</span>

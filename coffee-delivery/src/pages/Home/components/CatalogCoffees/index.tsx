@@ -3,7 +3,7 @@ import { CoffeeCard } from '../CoffeeCard';
 
 import * as S from './styles';
 
-type Coffee = {
+export type Coffee = {
   id: string;
   tags: string[];
   name: string;

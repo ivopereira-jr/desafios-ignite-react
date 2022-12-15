@@ -1,5 +1,6 @@
+import { ShoppingCart } from 'phosphor-react';
 import { useState } from 'react';
-import { Minus, Plus, ShoppingCart } from 'phosphor-react';
+import { ActionsToCoffeeCard } from '../../../../components/ActionsToCoffeeCard';
 
 import { CoffeesProps } from '../CatalogCoffees';
 
@@ -42,23 +43,15 @@ export function CoffeeCard({ coffee }: CoffeesProps) {
             R$ <strong>9,90</strong>
           </span>
 
-          <S.ActionsToCart>
-            <S.AmountInputContainer>
-              <S.IconContainer onClick={handleDecrease} disabled={amount <= 1}>
-                <Minus size={14} weight='fill' />
-              </S.IconContainer>
-
-              <input type='number' value={amount} readOnly />
-
-              <S.IconContainer onClick={handleIncrease}>
-                <Plus size={14} weight='fill' />
-              </S.IconContainer>
-            </S.AmountInputContainer>
-
+          <ActionsToCoffeeCard
+            onHandleDecrease={handleDecrease}
+            onHandleIncrease={handleIncrease}
+            amount={amount}
+          >
             <S.AddCoffeeToCart onClick={handleAddToCart}>
               <ShoppingCart size={22} weight='fill' />
             </S.AddCoffeeToCart>
-          </S.ActionsToCart>
+          </ActionsToCoffeeCard>
         </S.CoffeeCardFooter>
       </S.CoffeeContent>
     </S.CoffeeCard>
