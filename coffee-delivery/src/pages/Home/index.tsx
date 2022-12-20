@@ -1,46 +1,38 @@
-import { ReactNode } from 'react';
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react';
 
-import { Benefits } from './components/Benefits';
 import { CatalogCoffees } from './components/CatalogCoffees';
+import { InfoWithIcon, InfoWithIconProps } from '../../components/InfoWithIcon';
 
 import introCoffeeBanner from '../../assets/intro-coffee-banner.svg';
 import * as S from './styles';
 import { useTheme } from 'styled-components';
 
-export interface BenefitsProps {
-  id?: string;
-  bgColor: string;
-  icon: ReactNode;
-  description: string;
-}
-
 export function Home() {
   const { colors } = useTheme();
 
-  const benefitsContent: BenefitsProps[] = [
+  const benefitsContent: InfoWithIconProps[] = [
     {
       id: crypto.randomUUID(),
       bgColor: colors['brand-yellow-dark'],
-      description: 'Compra simples e segura',
+      title: 'Compra simples e segura',
       icon: <ShoppingCart weight='fill' />
     },
     {
       id: crypto.randomUUID(),
       bgColor: colors['base-text'],
-      description: 'Embalagem mantém o café intacto',
+      title: 'Embalagem mantém o café intacto',
       icon: <Package weight='fill' />
     },
     {
       id: crypto.randomUUID(),
       bgColor: colors['brand-yellow'],
-      description: 'Entrega rápida e rastreada',
+      title: 'Entrega rápida e rastreada',
       icon: <Timer weight='fill' />
     },
     {
       id: crypto.randomUUID(),
       bgColor: colors['brand-purple'],
-      description: 'O café chega fresquinho até você',
+      title: 'O café chega fresquinho até você',
       icon: <Coffee weight='fill' />
     }
   ];
@@ -58,11 +50,11 @@ export function Home() {
 
             <S.IntroductionBenefits>
               {benefitsContent.map(benefit => (
-                <Benefits
+                <InfoWithIcon
                   key={benefit.id}
                   bgColor={benefit.bgColor}
                   icon={benefit.icon}
-                  description={benefit.description}
+                  title={benefit.title}
                 />
               ))}
             </S.IntroductionBenefits>

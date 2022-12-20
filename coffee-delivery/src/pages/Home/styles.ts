@@ -32,7 +32,7 @@ export const IntroductionDescription = styled.div`
     color: ${({ theme }) => theme.colors['base-title']};
   }
 
-  h2 {
+  > h2 {
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 1.625rem;
@@ -42,6 +42,7 @@ export const IntroductionDescription = styled.div`
 `;
 
 export const IntroductionBenefits = styled.div`
+  width: 100%;
   margin-top: 4.125rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
