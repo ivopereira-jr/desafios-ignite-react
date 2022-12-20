@@ -1,24 +1,28 @@
-import { useState } from 'react';
 import { Trash } from 'phosphor-react';
+import { useCart } from '../../../../hooks/UseCart';
 
 import { ActionsToCoffeeCard } from '../../../../components/ActionsToCoffeeCard';
-import { CoffeesProps } from '../../../Home/components/CatalogCoffees';
 
 import * as S from './styles';
+import { CartItem } from '../../../../contexts/CartContext';
 
-export function CoffeeCardInCart({ coffee }: CoffeesProps) {
-  const [amount, setAmount] = useState(1);
+interface CoffeeCardInCart {
+  coffee: CartItem;
+}
 
-  function handleDecrease() {
-    setAmount(state => state - 1);
-  }
+export function CoffeeCardInCart({ coffee }: CoffeeCardInCart) {
+  const { changeCartItemQuantity, removeCoffeeToCart } = useCart();
 
   function handleIncrease() {
-    setAmount(state => state + 1);
+    changeCartItemQuantity(coffee.id, 'increase');
   }
 
-  function handleRemoveToCart() {
-    console.log('ok');
+  function handleDecrease() {
+    changeCartItemQuantity(coffee.id, 'decrease');
+  }
+
+  function handleRemoveToCart(coffeeId: string) {
+    removeCoffeeToCart(coffeeId);
   }
 
   return (
@@ -32,12 +36,12 @@ export function CoffeeCardInCart({ coffee }: CoffeesProps) {
         <h2>{coffee.name}</h2>
 
         <ActionsToCoffeeCard
-          onHandleDecrease={handleDecrease}
           onHandleIncrease={handleIncrease}
-          amount={amount}
+          onHandleDecrease={handleDecrease}
+          amount={coffee.amount}
           size='small'
         >
-          <S.RemoveCoffeeToCart onClick={handleRemoveToCart}>
+          <S.RemoveCoffeeToCart onClick={() => handleRemoveToCart(coffee.id)}>
             <Trash size={18} />
             <span>remover</span>
           </S.RemoveCoffeeToCart>

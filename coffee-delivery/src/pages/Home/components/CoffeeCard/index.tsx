@@ -1,13 +1,16 @@
 import { ShoppingCart } from 'phosphor-react';
 import { useState } from 'react';
+import { useCart } from '../../../../hooks/UseCart';
+
 import { ActionsToCoffeeCard } from '../../../../components/ActionsToCoffeeCard';
 
-import { CoffeesProps } from '../CatalogCoffees';
+import { Coffee, CoffeesProps } from '../CatalogCoffees';
 
 import * as S from './styles';
 
 export function CoffeeCard({ coffee }: CoffeesProps) {
   const [amount, setAmount] = useState(1);
+  const { addCoffeeToCart } = useCart();
 
   function handleDecrease() {
     setAmount(state => state - 1);
@@ -17,8 +20,13 @@ export function CoffeeCard({ coffee }: CoffeesProps) {
     setAmount(state => state + 1);
   }
 
-  function handleAddToCart() {
-    console.log({ ...coffee, amount });
+  function handleAddToCart(coffee: Coffee) {
+    const coffeeToAddInCart = {
+      ...coffee,
+      amount
+    };
+
+    addCoffeeToCart(coffeeToAddInCart);
   }
 
   return (
@@ -48,7 +56,7 @@ export function CoffeeCard({ coffee }: CoffeesProps) {
             onHandleIncrease={handleIncrease}
             amount={amount}
           >
-            <S.AddCoffeeToCart onClick={handleAddToCart}>
+            <S.AddCoffeeToCart onClick={() => handleAddToCart(coffee)}>
               <ShoppingCart size={22} weight='fill' />
             </S.AddCoffeeToCart>
           </ActionsToCoffeeCard>

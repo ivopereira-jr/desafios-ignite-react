@@ -1,15 +1,30 @@
-import { coffees } from '../../../../mocks/coffees';
+import { useCart } from '../../../../hooks/UseCart';
 
 import { CoffeeCardInCart } from '../CoffeeCardInCart';
-import { Coffee } from '../../../Home/components/CatalogCoffees';
+import { CartItem } from '../../../../contexts/CartContext';
+import { formatPrice } from '../../../../utils/formatPrice';
 
 import * as S from './styles';
 
 export function Cart() {
+  const { cartItems } = useCart();
+
+  const productsCostTotal = cartItems?.reduce(
+    (total, product) => total + product.amount * product.price,
+    0
+  );
+
+  const transportCost = 3.5;
+  const costTotal = transportCost + productsCostTotal;
+
+  const transportCostFormatted = formatPrice(transportCost);
+  const productsCostTotalFormatted = formatPrice(productsCostTotal);
+  const costTotalFormatted = formatPrice(costTotal);
+
   return (
     <S.CartContainer>
       <S.CoffeesInCart>
-        {coffees.map((coffee: Coffee) => (
+        {cartItems.map((coffee: CartItem) => (
           <CoffeeCardInCart key={coffee.id} coffee={coffee} />
         ))}
       </S.CoffeesInCart>
@@ -17,15 +32,15 @@ export function Cart() {
       <S.CartTotalValues>
         <S.CartBoxValue>
           <p>Total de itens</p>
-          <span>R$ 29,70</span>
+          <span>{productsCostTotalFormatted}</span>
         </S.CartBoxValue>
         <S.CartBoxValue>
           <p>Entrega</p>
-          <span>R$ 29,70</span>
+          <span>{transportCostFormatted}</span>
         </S.CartBoxValue>
         <S.CartBoxTotalValue>
           <p>Total</p>
-          <span>R$ 33,20</span>
+          <span>{costTotalFormatted}</span>
         </S.CartBoxTotalValue>
 
         <S.ButtonConfirmOrder form='formCheckoutOrderInfos' type='submit'>
