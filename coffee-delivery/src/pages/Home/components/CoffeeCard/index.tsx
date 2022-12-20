@@ -12,6 +12,10 @@ export function CoffeeCard({ coffee }: CoffeesProps) {
   const [amount, setAmount] = useState(1);
   const { addCoffeeToCart } = useCart();
 
+  const coffeePriceFormatted = coffee.price.toLocaleString('pt-BR', {
+    minimumFractionDigits: 2
+  });
+
   function handleDecrease() {
     setAmount(state => state - 1);
   }
@@ -48,7 +52,7 @@ export function CoffeeCard({ coffee }: CoffeesProps) {
 
         <S.CoffeeCardFooter>
           <span>
-            R$ <strong>9,90</strong>
+            R$ <strong>{coffeePriceFormatted}</strong>
           </span>
 
           <ActionsToCoffeeCard
