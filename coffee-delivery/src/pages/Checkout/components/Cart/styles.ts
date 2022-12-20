@@ -1,17 +1,12 @@
 import styled from 'styled-components';
 import { BaseCard } from '../../styles';
 
-export const CartContainer = styled.div`
-  position: relative;
-`;
-
-export const CoffeesInCart = styled(BaseCard)`
+export const CartContainer = styled(BaseCard)`
   width: 100%;
   height: auto;
   max-height: 31.25rem;
   margin-top: 0.9375rem;
-  display: flex;
-  flex-direction: column;
+  padding: 0;
   border-radius: 6px 44px;
   overflow-y: scroll;
 
@@ -20,14 +15,20 @@ export const CoffeesInCart = styled(BaseCard)`
   }
 `;
 
+export const CoffeesInCart = styled.div`
+  height: auto;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+`;
+
 export const CartTotalValues = styled.footer`
   width: 100%;
   height: auto;
   padding: 1.5rem 2.5rem 2.5rem 2.5rem;
-  position: absolute;
+  position: sticky;
   bottom: 0;
   background-color: ${({ theme }) => theme.colors['base-card']};
-  border-radius: 0 0 6px 44px;
 `;
 
 const BaseCartBox = styled.div`
