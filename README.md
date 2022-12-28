@@ -67,4 +67,4 @@ Durante este desafio, utilizamos conceitos um pouco mais avançados desenvolvend
 
 &nbsp;
 
-<p align="center">Feito com 💙 por GBDev</p>
+<p align="center">Feito com 💜 por Ivo Pereira</p>
