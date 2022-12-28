@@ -7,6 +7,10 @@ export const CatalogCoffeesContainer = styled.section`
   padding-bottom: 7.5rem;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 580px) {
+    margin-top: 3rem;
+  }
 `;
 
 export const TitleCatalogCoffees = styled.div`
@@ -35,6 +39,10 @@ export const TagsCoffeesContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+
+  @media (max-width: 580px) {
+    display: none;
+  }
 `;
 
 export const TagCoffees = styled(BaseTag)`
@@ -47,10 +55,10 @@ export const CoffeesList = styled.div`
   width: 100%;
   height: auto;
   padding: 0 1.5rem;
-  margin-top: 80px;
+  margin-top: 5rem;
   position: relative;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   column-gap: 2rem;
   row-gap: 2.5rem;
 
@@ -64,5 +72,9 @@ export const CoffeesList = styled.div`
     border-radius: 50px;
     transform: skewY(-3deg);
     z-index: -1;
+  }
+
+  @media (max-width: 580px) {
+    margin-top: 4rem;
   }
 `;

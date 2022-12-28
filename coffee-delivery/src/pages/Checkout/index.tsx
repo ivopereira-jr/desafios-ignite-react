@@ -64,7 +64,6 @@ export function Checkout() {
 
   function handleCreateNewCycle(data: ConfirmOrderFormData) {
     setLoading(true);
-    // console.log(data);
 
     if (data) {
       setInterval(() => {

@@ -13,6 +13,11 @@ export const PaymentMethodOptions = styled.div`
   display: flex;
   align-items: center;
   gap: 0.75rem;
+
+  @media (max-width: 1080px) {
+    flex-direction: column;
+    gap: 0;
+  }
 `;
 
 export const PaymentTextError = styled(TextError)`

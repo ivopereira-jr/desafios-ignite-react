@@ -17,6 +17,10 @@ export const ConfirmedOrderContainer = styled.section`
     line-height: 1.625rem;
     color: ${({ theme }) => theme.colors['base-subtitle']};
   }
+
+  @media (max-width: 960px) {
+    text-align: center;
+  }
 `;
 
 export const ConfirmedOrderContent = styled.div`
@@ -24,6 +28,10 @@ export const ConfirmedOrderContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 960px) {
+    justify-content: center;
+  }
 `;
 
 export const DeliveryOrderInfos = styled.div`
@@ -51,4 +59,8 @@ export const DeliveryOrderInfos = styled.div`
   }
 `;
 
-export const DeliveryOrderIllustration = styled.div``;
+export const DeliveryOrderIllustration = styled.div`
+  @media (max-width: 960px) {
+    display: none;
+  }
+`;

@@ -32,25 +32,27 @@ export function CoffeeCardInCart({ coffee }: CoffeeCardInCart) {
         alt={`xicara de cafe em cima de um pratinho com cafe ${coffee.name}`}
       />
 
-      <S.CoffeeCardContent>
-        <h2>{coffee.name}</h2>
+      <S.CoffeCardContentWrapper>
+        <S.CoffeeCardContent>
+          <h2>{coffee.name}</h2>
 
-        <ActionsToCoffeeCard
-          onHandleIncrease={handleIncrease}
-          onHandleDecrease={handleDecrease}
-          amount={coffee.amount}
-          size='small'
-        >
-          <S.RemoveCoffeeToCart onClick={() => handleRemoveToCart(coffee.id)}>
-            <Trash size={18} />
-            <span>remover</span>
-          </S.RemoveCoffeeToCart>
-        </ActionsToCoffeeCard>
-      </S.CoffeeCardContent>
+          <ActionsToCoffeeCard
+            onHandleIncrease={handleIncrease}
+            onHandleDecrease={handleDecrease}
+            amount={coffee.amount}
+            size='small'
+          >
+            <S.RemoveCoffeeToCart onClick={() => handleRemoveToCart(coffee.id)}>
+              <Trash size={18} />
+              <span>remover</span>
+            </S.RemoveCoffeeToCart>
+          </ActionsToCoffeeCard>
+        </S.CoffeeCardContent>
 
-      <S.CoffeePrice>
-        R$ <strong>9,90</strong>
-      </S.CoffeePrice>
+        <S.CoffeePrice>
+          R$ <strong>9,90</strong>
+        </S.CoffeePrice>
+      </S.CoffeCardContentWrapper>
     </S.CoffeeCardContainer>
   );
 }

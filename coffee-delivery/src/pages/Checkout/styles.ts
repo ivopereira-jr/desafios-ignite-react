@@ -7,6 +7,10 @@ export const CheckoutContainer = styled.div`
   margin-top: 2.5rem;
   display: flex;
   gap: 2rem;
+
+  @media (max-width: 780px) {
+    flex-direction: column;
+  }
 `;
 
 export const ContainerTitle = styled.h2`

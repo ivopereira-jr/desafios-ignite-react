@@ -16,6 +16,12 @@ export const SectionIntroduction = styled.section`
   align-items: center;
   justify-content: center;
   background: url(${introBackground}) center center / cover no-repeat;
+
+  @media (max-width: 1080px) {
+    img {
+      display: none;
+    }
+  }
 `;
 
 export const IntroductionDescription = styled.div`
@@ -35,9 +41,24 @@ export const IntroductionDescription = styled.div`
   > h2 {
     font-size: 1.25rem;
     font-weight: 400;
-    line-height: 1.625rem;
+    line-height: 130%;
     color: ${({ theme }) => theme.colors['base-subtitle']};
     margin-top: 1rem;
+  }
+
+  @media (max-width: 1080px) {
+    h1 {
+      width: 80%;
+    }
+  }
+
+  @media (max-width: 580px) {
+    margin-right: 0;
+
+    h1 {
+      width: 100%;
+      font-size: 2.5rem;
+    }
   }
 `;
 
@@ -47,4 +68,9 @@ export const IntroductionBenefits = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   row-gap: 1.25rem;
+
+  @media (max-width: 580px) {
+    margin-top: 3rem;
+    grid-template-columns: 1fr;
+  }
 `;

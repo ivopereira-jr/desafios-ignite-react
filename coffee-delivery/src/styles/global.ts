@@ -17,6 +17,18 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
 
+  html {
+    font-size: 100%;
+
+    @media (max-width: 1024px) {
+      font-size: 93.75%; // 1rem = 15px
+    }
+
+    @media (max-width: 768px) {
+      font-size: 87.5%; // 1rem = 14px
+    }
+  }
+
   body, input, textarea, button {
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
@@ -64,5 +76,11 @@ export const GlobalStyle = createGlobalStyle`
   .flexAlignCenter {
     display: flex;
     align-items: center;
+  }
+
+  @media (max-width: 1280px) {
+    .container {
+      padding: 0 1rem;
+    }
   }
 `;

@@ -20,6 +20,15 @@ export const AddressContainer = styled.div`
   .complement {
     grid-column: span 2;
   }
+
+  @media (max-width: 1080px) {
+    display: flex;
+    flex-direction: column;
+
+    .zipCode {
+      max-width: 100%;
+    }
+  }
 `;
 
 export const InputWrapper = styled.div`
@@ -28,6 +37,10 @@ export const InputWrapper = styled.div`
 
   .inputUf {
     max-width: 3.75rem;
+
+    @media (max-width: 1080px) {
+      max-width: 100%;
+    }
   }
 `;
 

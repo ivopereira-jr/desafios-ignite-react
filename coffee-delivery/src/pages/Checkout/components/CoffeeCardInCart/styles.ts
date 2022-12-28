@@ -15,6 +15,13 @@ export const CoffeeCardContainer = styled.div`
   }
 `;
 
+export const CoffeCardContentWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+`;
+
 export const CoffeeCardContent = styled.div`
   h2 {
     font-size: 1rem;
