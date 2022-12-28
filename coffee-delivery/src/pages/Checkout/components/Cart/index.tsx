@@ -6,7 +6,11 @@ import { formatPrice } from '../../../../utils/formatPrice';
 
 import * as S from './styles';
 
-export function Cart() {
+interface CartProps {
+  onLoading: boolean;
+}
+
+export function Cart({ onLoading }: CartProps) {
   const { cartItems } = useCart();
 
   const productsCostTotal = cartItems?.reduce(
@@ -43,8 +47,12 @@ export function Cart() {
           <span>{costTotalFormatted}</span>
         </S.CartBoxTotalValue>
 
-        <S.ButtonConfirmOrder form='formCheckoutOrderInfos' type='submit'>
-          confirmar pedido
+        <S.ButtonConfirmOrder
+          form='formCheckoutOrderInfos'
+          type='submit'
+          disabled={onLoading}
+        >
+          {onLoading ? <S.ButtonSpinner></S.ButtonSpinner> : 'confirmar pedido'}
         </S.ButtonConfirmOrder>
       </S.CartTotalValues>
     </S.CartContainer>

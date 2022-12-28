@@ -14,25 +14,25 @@ export function Home() {
     {
       id: crypto.randomUUID(),
       bgColor: colors['brand-yellow-dark'],
-      title: 'Compra simples e segura',
+      title: <h2>Compra simples e segura</h2>,
       icon: <ShoppingCart weight='fill' />
     },
     {
       id: crypto.randomUUID(),
       bgColor: colors['base-text'],
-      title: 'Embalagem mantém o café intacto',
+      title: <h2>Embalagem mantém o café intacto</h2>,
       icon: <Package weight='fill' />
     },
     {
       id: crypto.randomUUID(),
       bgColor: colors['brand-yellow'],
-      title: 'Entrega rápida e rastreada',
+      title: <h2>Entrega rápida e rastreada</h2>,
       icon: <Timer weight='fill' />
     },
     {
       id: crypto.randomUUID(),
       bgColor: colors['brand-purple'],
-      title: 'O café chega fresquinho até você',
+      title: <h2>O café chega fresquinho até você</h2>,
       icon: <Coffee weight='fill' />
     }
   ];

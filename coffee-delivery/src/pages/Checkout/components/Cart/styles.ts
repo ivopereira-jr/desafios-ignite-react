@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { BaseCard } from '../../styles';
 
 export const CartContainer = styled(BaseCard)`
@@ -56,6 +56,7 @@ export const CartBoxTotalValue = styled(BaseCartBox)`
 
 export const ButtonConfirmOrder = styled.button`
   width: 100%;
+  height: 2.875rem;
   padding: 0.75rem 0.5rem;
   margin-top: 1.5rem;
   color: ${({ theme }) => theme.colors['base-white']};
@@ -65,9 +66,35 @@ export const ButtonConfirmOrder = styled.button`
   font-weight: 700;
   line-height: 1.375rem;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: background-color 400ms ease;
 
-  &:hover {
+  &:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):hover {
     background-color: ${({ theme }) => theme.colors['brand-yellow-dark']};
   }
+`;
+
+const spinAnimation = keyframes`
+  0% { 
+    transform: rotate(0deg); 
+  }
+  100% { 
+    transform: rotate(360deg); 
+  }
+`;
+
+export const ButtonSpinner = styled.span`
+  display: flex;
+  border-top: 4px solid ${({ theme }) => theme.colors['base-white']};
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: ${spinAnimation} 1s linear infinite;
 `;

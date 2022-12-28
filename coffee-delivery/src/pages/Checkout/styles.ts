@@ -49,3 +49,36 @@ export const CoffeesSelected = styled.section`
   display: flex;
   flex-direction: column;
 `;
+
+export const CartEmpty = styled.div`
+  display: grid;
+  place-items: center;
+  margin-top: 6.25rem;
+
+  > h2 {
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 800;
+    font-family: 'Baloo 2';
+    line-height: 42px;
+  }
+
+  > p {
+    font-size: 1.125rem;
+  }
+`;
+
+export const ComeBackHomeButton = styled.button`
+  width: auto;
+  padding: 1rem 1.5rem;
+  margin-top: 1.5rem;
+  color: ${({ theme }) => theme.colors['base-white']};
+  background-color: ${({ theme }) => theme.colors['brand-yellow']};
+  border-radius: 6px;
+  font-weight: 700;
+  transition: background-color 400ms ease;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors['brand-yellow-dark']};
+  }
+`;

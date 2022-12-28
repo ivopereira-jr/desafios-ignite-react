@@ -5,23 +5,23 @@ import { PaymentMethodInput } from './PaymentMethodInpur';
 
 import * as S from './styles';
 
+export const paymentMethodsOptions = {
+  credit: {
+    icon: <CreditCard size={16} />,
+    title: 'Cartão de crédito'
+  },
+  debit: {
+    icon: <Bank size={16} />,
+    title: 'Cartão de débito'
+  },
+  money: {
+    icon: <Money size={16} />,
+    title: 'Dinheiro'
+  }
+};
+
 export function PaymentFormFields() {
   const { register } = useFormContext();
-
-  const paymentMethodsOptions = {
-    credit: {
-      icon: <CreditCard size={16} />,
-      title: 'Cartão de crédito'
-    },
-    debit: {
-      icon: <Bank size={16} />,
-      title: 'Cartão de débito'
-    },
-    money: {
-      icon: <Money size={16} />,
-      title: 'Dinheiro'
-    }
-  };
 
   return (
     <S.PaymentMethodOptionsContainer>

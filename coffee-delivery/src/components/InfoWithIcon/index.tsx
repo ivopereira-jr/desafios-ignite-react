@@ -6,8 +6,8 @@ export interface InfoWithIconProps {
   id?: string;
   bgColor: string;
   icon: ReactNode;
-  title: string;
-  description?: string;
+  title: ReactNode;
+  description?: string | ReactNode;
 }
 
 export function InfoWithIcon({
@@ -20,8 +20,8 @@ export function InfoWithIcon({
     <S.InfoWithIconContainer>
       <S.InfoIcon bgColor={bgColor}>{icon}</S.InfoIcon>
       <S.InfoContent>
-        <h2>{title}</h2>
-        {description && <p>{description}</p>}
+        {title}
+        {description && description}
       </S.InfoContent>
     </S.InfoWithIconContainer>
   );
