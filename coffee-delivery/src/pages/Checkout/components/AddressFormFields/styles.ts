@@ -8,12 +8,12 @@ export const AddressContainer = styled.div`
   row-gap: 1rem;
   grid-auto-flow: dense;
 
-  .cep {
+  .zipCode {
     grid-column: span 3;
     max-width: 12.5rem;
   }
 
-  .street {
+  .address {
     grid-column: span 3;
   }
 

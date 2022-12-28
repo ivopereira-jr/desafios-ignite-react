@@ -1,30 +1,43 @@
 import { useFormContext } from 'react-hook-form';
+import { getZipCodeInfo } from '../../../../services/getZipCodeInfo';
 
 import * as S from './styles';
 
 export function AddressFormFields() {
-  const { register, formState } = useFormContext();
+  const { register, setValue, setFocus } = useFormContext();
+
+  async function checkZipcode(e: React.ChangeEvent<HTMLInputElement>) {
+    const cep = e.target.value.replace(/\D/g, '');
+    const { data } = await getZipCodeInfo.get(`${cep}/json`);
+
+    setValue('address', data.logradouro);
+    setValue('district', data.bairro);
+    setValue('city', data.localidade);
+    setValue('uf', data.uf);
+    setFocus('addressNumber');
+  }
 
   return (
     <S.AddressContainer>
       <S.Input
         placeholder='CEP'
         type='number'
-        className='cep'
-        {...register('cep')}
-      // error={errors.cep?.message}
+        className='zipCode'
+        {...register('zipCode')}
+        onBlur={checkZipcode}
+      // error={errors.zipCode?.message}
       />
       <S.Input
         placeholder='Rua'
-        className='street'
-        {...register('street')}
-      // error={errors.street?.message}
+        className='address'
+        {...register('address')}
+      // error={errors.address?.message}
       />
       <S.Input
         type='number'
         placeholder='Número'
-        {...register('number')}
-      // error={errors.number?.message}
+        {...register('addressNumber')}
+      // error={errors.addressNumber?.message}
       />
       <S.InputContainer className='complement'>
         <S.Input
