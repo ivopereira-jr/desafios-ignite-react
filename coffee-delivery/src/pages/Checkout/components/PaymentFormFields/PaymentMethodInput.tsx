@@ -11,7 +11,7 @@ type PaymentMethodInputProps = InputHTMLAttributes<HTMLInputElement> & {
 export const PaymentMethodInput = forwardRef<
   HTMLInputElement,
   PaymentMethodInputProps
->(({ id, icon, title, ...props }, ref) => {
+>(({ icon, title, ...props }, ref) => {
   return (
     <S.PaymentMethodContainer>
       <label>

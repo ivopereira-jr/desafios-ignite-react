@@ -1,11 +1,22 @@
+import { TextError } from './../AddressFormFields/styles';
 import styled from 'styled-components';
 
 export const PaymentMethodOptionsContainer = styled.div`
   width: 100%;
   margin-top: 2rem;
   display: flex;
+  flex-direction: column;
+`;
+
+export const PaymentMethodOptions = styled.div`
+  width: 100%;
+  display: flex;
   align-items: center;
   gap: 0.75rem;
+`;
+
+export const PaymentTextError = styled(TextError)`
+  margin-top: 1rem;
 `;
 
 export const PaymentMethodContainer = styled.div`

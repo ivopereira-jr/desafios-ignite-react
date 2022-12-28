@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const AddressContainer = styled.div`
   margin-top: 2rem;
@@ -22,14 +22,31 @@ export const AddressContainer = styled.div`
   }
 `;
 
+export const InputWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  .inputUf {
+    max-width: 3.75rem;
+  }
+`;
+
+export const TextError = styled.p`
+  margin-top: 0.375rem;
+  margin-left: 0.125rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1rem;
+  color: ${({ theme }) => theme.colors['base-error']};
+`;
+
 export const InputContainer = styled.div`
-  width: 100%;
   height: 2.625rem;
   display: flex;
   align-items: center;
   position: relative;
 
-  > input {
+  .inputComplement {
     padding-right: 4.375rem;
   }
 
@@ -44,8 +61,13 @@ export const InputContainer = styled.div`
   }
 `;
 
-export const Input = styled.input`
+interface InputStyledProps {
+  hasError: boolean;
+}
+
+export const InputStyled = styled.input<InputStyledProps>`
   flex: 1;
+  max-height: 2.625rem;
   padding: 0.75rem;
   color: ${({ theme }) => theme.colors['base-text']};
   background-color: ${({ theme }) => theme.colors['base-input']};
@@ -63,4 +85,10 @@ export const Input = styled.input`
   &::placeholder {
     color: ${({ theme }) => theme.colors['base-label']};
   }
+
+  ${({ theme, hasError }) =>
+    hasError &&
+    css`
+      border-color: ${theme.colors['base-error']};
+    `}
 `;

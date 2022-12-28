@@ -31,7 +31,7 @@ const newOrderFormValidationSchema = zod.object({
   uf: zod.string().min(1, 'Informe a UF'),
   paymentMethod: zod.nativeEnum(PaymentMethods, {
     errorMap: () => {
-      return { message: 'Informe o método de pagamento' };
+      return { message: 'Escolha a forma de pagamento' };
     }
   })
 });
