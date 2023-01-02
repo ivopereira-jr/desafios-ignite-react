@@ -58,6 +58,7 @@ export const CartEmpty = styled.div`
   display: grid;
   place-items: center;
   margin-top: 6.25rem;
+  text-align: center;
 
   > h2 {
     margin-top: 1rem;
