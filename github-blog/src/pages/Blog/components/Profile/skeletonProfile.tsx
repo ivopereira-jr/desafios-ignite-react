@@ -1,17 +1,12 @@
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css';
+import Skeleton from 'react-loading-skeleton';
 
-import { useTheme } from 'styled-components';
+import { SkeletonThemeDefault } from '../../../../components/SkeletonThemeDefault';
+
 import * as S from './styles';
 
 export function SkeletonProfile() {
-	const { colors } = useTheme();
-
 	return (
-		<SkeletonTheme
-			baseColor={colors['base-border']}
-			highlightColor={colors['base-label']}
-		>
+		<SkeletonThemeDefault>
 			<Skeleton width={148} height={148} />
 			<S.WrapperSkeleton>
 				<S.BoxSkeleton>
@@ -24,6 +19,6 @@ export function SkeletonProfile() {
 					<Skeleton height={18} style={{ marginTop: '24px' }} />
 				</S.BoxSkeleton>
 			</S.WrapperSkeleton>
-		</SkeletonTheme>
+		</SkeletonThemeDefault>
 	);
 }

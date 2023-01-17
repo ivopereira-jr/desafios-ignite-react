@@ -53,10 +53,6 @@ export const GlobalStyle = createGlobalStyle`
   a {
     cursor: pointer;
     text-decoration: none;
-    
-    &:hover {
-      border-bottom: 1px solid ${({ theme }) => theme.colors['brand-blue']};;
-    }
   }
 
   ul {

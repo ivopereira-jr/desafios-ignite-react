@@ -7,6 +7,11 @@ export const BaseLink = styled.a`
 	font-weight: 700;
 	text-transform: uppercase;
 	padding-bottom: 0.125rem;
+	border-bottom: 1px solid transparent;
+
+	&:hover {
+		border-color: ${({ theme }) => theme.colors['brand-blue']};
+	}
 
 	svg {
 		width: 0.75rem;

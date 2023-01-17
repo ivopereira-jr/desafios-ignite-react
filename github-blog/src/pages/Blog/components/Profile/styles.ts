@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ProfileContainer = styled.div`
+export const BaseCardStartPage = styled.div`
 	width: 100%;
 	height: auto;
 	border-radius: 10px;
@@ -8,6 +8,9 @@ export const ProfileContainer = styled.div`
 	background-color: ${({ theme }) => theme.colors['base-profile']};
 	padding: 2rem 2.5rem;
 	margin-top: -5.375rem;
+`;
+
+export const ProfileContainer = styled(BaseCardStartPage)`
 	display: flex;
 	align-items: center;
 	gap: 2rem;
