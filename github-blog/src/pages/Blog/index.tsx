@@ -30,7 +30,6 @@ export function Blog() {
 					`/search/issues?q=${query}%20repo:${USERNAME}/${ISSUESREPONAME}`
 				);
 
-				console.log(response.data.items, query);
 				searchPosts(response.data.items);
 			} catch (error) {
 				console.log(error);
