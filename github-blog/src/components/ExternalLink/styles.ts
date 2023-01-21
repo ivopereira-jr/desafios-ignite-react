@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const BaseLink = styled.a`
 	color: ${({ theme }) => theme.colors['brand-blue']};
@@ -19,8 +19,18 @@ export const BaseLink = styled.a`
 	}
 `;
 
-export const ExternalLinkContainer = styled(BaseLink)`
+interface ExternalLinkProps {
+	variant?: 'iconLeft';
+}
+
+export const ExternalLinkContainer = styled(BaseLink)<ExternalLinkProps>`
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
+
+	${({ variant }) =>
+		variant === 'iconLeft' &&
+		css`
+			flex-direction: row-reverse;
+		`}
 `;

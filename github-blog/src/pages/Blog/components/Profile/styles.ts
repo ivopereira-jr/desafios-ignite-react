@@ -49,8 +49,7 @@ export const ProfileContent = styled.div`
 	}
 `;
 
-export const ProfileInfos = styled.ul`
-	margin-top: 1.5rem;
+export const BaseListInfos = styled.ul`
 	display: flex;
 	align-items: center;
 	flex-grow: wrap;
@@ -66,6 +65,10 @@ export const ProfileInfos = styled.ul`
 			color: ${({ theme }) => theme.colors['base-label']};
 		}
 	}
+`;
+
+export const ProfileInfos = styled(BaseListInfos)`
+	margin-top: 1.5rem;
 `;
 
 export const BoxSkeleton = styled.div`
