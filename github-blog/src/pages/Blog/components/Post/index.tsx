@@ -1,22 +1,14 @@
-import { formatDistanceToNow } from 'date-fns';
-import ptBR from 'date-fns/locale/pt-BR';
-
-import { PostProps } from '../..';
+import { PostsProps } from '../..';
+import { relativeDateFormatter } from '../../../../utils/formatterDate';
 
 import * as S from './styles';
 
 interface IPost {
-	post: PostProps;
+	post: PostsProps;
 }
 
 export function Post({ post }: IPost) {
-	const publishedDateRelativeToNow = formatDistanceToNow(
-		new Date(post.created_at),
-		{
-			locale: ptBR,
-			addSuffix: true
-		}
-	);
+	const publishedDateRelativeToNow = relativeDateFormatter(post.created_at);
 
 	return (
 		<S.PostContainer to={`/post/${post.number}`}>

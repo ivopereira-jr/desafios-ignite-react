@@ -8,7 +8,7 @@ import { SkeletonPost } from './components/Post/SkeletonPost';
 
 import * as S from './styles';
 
-export interface PostProps {
+export interface PostsProps {
 	title: string;
 	body: string;
 	number: number;
@@ -20,7 +20,7 @@ const USERNAME = import.meta.env.VITE_GITHUB_USERNAME;
 const ISSUESREPONAME = import.meta.env.VITE_GITHUB_ISSUESREPONAME;
 
 export function Blog() {
-	const [posts, searchPosts] = useState<PostProps[]>([]);
+	const [posts, searchPosts] = useState<PostsProps[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
 
 	const getPosts = useCallback(

@@ -56,7 +56,6 @@ export const BoxSkeletonPost = styled.div`
 	width: 100%;
 	height: 260px;
 	padding: 2rem;
-
 	border-radius: 0.625rem;
 	background-color: ${({ theme }) => theme.colors['base-profile']};
 `;

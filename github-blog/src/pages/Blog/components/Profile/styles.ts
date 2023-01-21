@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const BaseCardStartPage = styled.div`
+export const BaseCardStartPage = styled.section`
 	width: 100%;
 	height: auto;
 	border-radius: 10px;

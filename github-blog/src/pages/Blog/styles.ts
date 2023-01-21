@@ -6,7 +6,7 @@ export const BlogContainer = styled.div`
 	padding-bottom: 5rem;
 `;
 
-export const PostsContainer = styled.div`
+export const PostsContainer = styled.section`
 	margin-top: 3rem;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
