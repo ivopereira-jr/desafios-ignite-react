@@ -12,7 +12,7 @@ type ExternalLinkProps = ComponentProps<typeof S.ExternalLinkContainer> & {
 
 export function ExternalLink({ text, icon, ...rest }: ExternalLinkProps) {
 	return (
-		<S.ExternalLinkContainer target="_blank" {...rest}>
+		<S.ExternalLinkContainer {...rest}>
 			{text}
 			{icon ?? <FontAwesomeIcon icon={faUpRightFromSquare} />}
 		</S.ExternalLinkContainer>
