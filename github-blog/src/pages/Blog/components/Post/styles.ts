@@ -5,7 +5,7 @@ export const PostContainer = styled(Link)`
 	max-height: 16.25rem;
 	background-color: ${({ theme }) => theme.colors['base-post']};
 	border-radius: 0.625rem;
-	padding: 32px;
+	padding: 2rem;
 	border: 0.125rem solid transparent;
 	transition: border-color 400ms ease;
 
@@ -55,4 +55,8 @@ export const PostContainer = styled(Link)`
 export const BoxSkeletonPost = styled.div`
 	width: 100%;
 	height: 260px;
+	padding: 2rem;
+
+	border-radius: 0.625rem;
+	background-color: ${({ theme }) => theme.colors['base-profile']};
 `;

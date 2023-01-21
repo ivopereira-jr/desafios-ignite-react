@@ -49,7 +49,7 @@ export function Blog() {
 			<Profile />
 			<SearchPosts postsLength={posts.length} getPosts={getPosts} />
 			<S.PostsContainer>
-				{!isLoading ? (
+				{isLoading ? (
 					<SkeletonPost />
 				) : (
 					posts.map(post => {
