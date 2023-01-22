@@ -10,7 +10,7 @@ import ImageDeliveryOrderIllustration from '../../assets/finished-order.svg';
 import * as S from './styles';
 import { useTheme } from 'styled-components';
 
-interface LocationType {
+export interface LocationType {
   state: OrderData;
 }
 
@@ -27,13 +27,13 @@ export function SuccessConfirmedOrder() {
         <h2>
           Entrega em{' '}
           <strong>
-            {state.address}, {state.addressNumber}
+            {state?.address}, {state?.addressNumber}
           </strong>
         </h2>
       ),
       description: (
         <p>
-          {state.district} - {state.city}, {state.uf}
+          {state?.district} - {state?.city}, {state?.uf}
         </p>
       ),
       icon: <MapPin weight='fill' />
@@ -49,7 +49,7 @@ export function SuccessConfirmedOrder() {
       id: crypto.randomUUID(),
       bgColor: colors['brand-yellow-dark'],
       title: <h2>Pagamento na entrega</h2>,
-      description: <p>{paymentMethodsOptions[state.paymentMethod].title}</p>,
+      description: <p>{paymentMethodsOptions[state?.paymentMethod]?.title}</p>,
       icon: <CurrencyDollar weight='fill' />
     }
   ];
@@ -59,6 +59,8 @@ export function SuccessConfirmedOrder() {
       navigate('/');
     }
   }, []);
+
+  if (!state) return null;
 
   return (
     <S.ConfirmedOrderContainer className='container'>

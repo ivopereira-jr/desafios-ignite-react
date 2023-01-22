@@ -66,7 +66,7 @@ export function Checkout() {
     setLoading(true);
 
     if (data) {
-      setInterval(() => {
+      setTimeout(() => {
         setLoading(false);
         navigate('/confirmed-order', {
           state: data
