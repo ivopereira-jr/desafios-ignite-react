@@ -8,9 +8,17 @@ const DivFlexAlignCenter = styled.div`
 `;
 
 export const HeaderContainer = styled.header`
+  position: sticky;
+  top: 0;
+  background: rgba(250, 250, 250, 0.88);
+  backdrop-filter: blur(8px);
+  z-index: 3;
+  transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+`;
+
+export const HeaderWrapper = styled.div`
   width: 100%;
   height: 6.5rem;
-  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -45,7 +53,7 @@ export const HeaderButtonLocation = styled(BaseButton)`
 
     &:hover {
       background: ${({ theme }) =>
-      darken(0.08, theme.colors[`brand-${variant}-light`])};
+        darken(0.08, theme.colors[`brand-${variant}-light`])};
     }
 
     svg {
@@ -62,7 +70,7 @@ export const HeaderButtonCart = styled(BaseButton)`
 
     &:hover {
       background: ${({ theme }) =>
-      darken(0.08, theme.colors[`brand-${variant}-light`])};
+        darken(0.08, theme.colors[`brand-${variant}-light`])};
     }
 
     svg {

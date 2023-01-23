@@ -78,6 +78,11 @@ export const GlobalStyle = createGlobalStyle`
     align-items: center;
   }
 
+  .headerHide {
+    top: -6.5rem;
+  }
+
+  
   @media (max-width: 1280px) {
     .container {
       padding: 0 1rem;
