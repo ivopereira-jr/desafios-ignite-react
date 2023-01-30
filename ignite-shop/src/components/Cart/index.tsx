@@ -12,7 +12,8 @@ import {
 	CartButtonClose,
 	CartContent,
 	CartSummary,
-	CartSummaryContent
+	CartSummaryContent,
+	TextCartEmpty
 } from './styles';
 
 export function Cart() {
@@ -47,7 +48,7 @@ export function Cart() {
 						<h2>Sacola de compras</h2>
 
 						{cartProducts.length <= 0 ? (
-							<p>Seu sacola está vazia</p>
+							<TextCartEmpty>Seu sacola está vazia</TextCartEmpty>
 						) : (
 							<>
 								{cartProducts.map(product => (

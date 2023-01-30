@@ -31,6 +31,12 @@ export const CartContent = styled(Dialog.Content, {
 	}
 });
 
+export const TextCartEmpty = styled('p', {
+	fontSize: '$lg',
+	textAlign: 'center',
+	marginTop: '2rem'
+});
+
 export const CartButtonClose = styled(Dialog.Close, {
 	color: '$gray500',
 	background: 'none',
