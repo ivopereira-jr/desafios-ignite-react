@@ -7,7 +7,7 @@ import { useKeenSlider } from 'keen-slider/react';
 import Stripe from 'stripe';
 import { stripe } from '../lib/stripe';
 import { useCart } from '../hooks/useCart';
-import { Product as ProductProps } from '../context/CartContext';
+import { Product as ProductProps } from '../contexts/CartContext';
 
 import { CartButton } from '../components/CartButton';
 
