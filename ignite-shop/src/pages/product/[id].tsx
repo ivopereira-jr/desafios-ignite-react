@@ -1,10 +1,9 @@
-import { useState } from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import axios from 'axios';
 import Stripe from 'stripe';
 import { stripe } from '../../lib/stripe';
+import { useCart } from '../../hooks/useCart';
 
 import {
 	ImageContainer,
@@ -12,37 +11,25 @@ import {
 	ProductDetails
 } from '../../styles/pages/product';
 
+type ProductType = {
+	id: string;
+	name: string;
+	imageUrl: string;
+	price: string;
+	numberPrice: number;
+	description: string;
+	defaultPriceId: string;
+};
+
 interface ProductProps {
-	product: {
-		id: string;
-		name: string;
-		imageUrl: string;
-		price: string;
-		description: string;
-		defaultPriceId: string;
-	};
+	product: ProductType;
 }
 
 export default function Product({ product }: ProductProps) {
-	const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] =
-		useState(false);
+	const { addProductToCart, checkIfProductIsInTheCart } = useCart();
 
-	async function handleBuyProduct() {
-		try {
-			setIsCreatingCheckoutSession(true);
-
-			const response = await axios.post('/api/checkout', {
-				priceId: product.defaultPriceId
-			});
-			const { checkoutUrl } = response.data;
-
-			window.location.href = checkoutUrl;
-		} catch (error) {
-			console.log(error);
-
-			setIsCreatingCheckoutSession(false);
-			alert('Falha ao redirecionar ao checkout');
-		}
+	async function handleAddProductToCart(product: ProductType) {
+		addProductToCart(product);
 	}
 
 	return (
@@ -63,10 +50,10 @@ export default function Product({ product }: ProductProps) {
 					<p>{product.description}</p>
 
 					<button
-						disabled={isCreatingCheckoutSession}
-						onClick={handleBuyProduct}
+						disabled={checkIfProductIsInTheCart(product.id)}
+						onClick={() => handleAddProductToCart(product)}
 					>
-						Comprar agora
+						Colocar na sacola
 					</button>
 				</ProductDetails>
 			</ProductContainer>
@@ -101,6 +88,7 @@ export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
 					style: 'currency',
 					currency: 'BRL'
 				}).format(price.unit_amount / 100),
+				numberPrice: price.unit_amount / 100,
 				description: product.description,
 				defaultPriceId: price.id
 			}
