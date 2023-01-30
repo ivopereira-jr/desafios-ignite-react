@@ -69,8 +69,6 @@ Durante este desafio, utilizamos conceitos um pouco mais avançados desenvolvend
 
 &nbsp;
 
-&nbsp;
-
 ## Desafio 03 - Github Blog
 
 <img src="images/github-blog.png" align="center" />
@@ -104,5 +102,33 @@ Durante este desafio, desenvolvemos uma aplicação que utiliza a API do GitHub 
 </a>
 
 &nbsp;
+
+## Desafio 04 - Ignite Shop 2.0
+
+<img src="images/ignite-shop.png" align="center" />
+
+Durante este desafio foram desenvolvidas algumas funcionalidades extras no projeto que foi desenvolvido no módulo 4.
+
+### 🛠️ Nesse projeto foi utilizado
+
+- [NextJS](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Stitches](https://stitches.dev/)
+- [Stripe](https://stripe.com/br)
+- [Radix](https://www.radix-ui.com/)
+
+<br />
+
+<a href="" target="_blank">
+<img src="https://user-images.githubusercontent.com/71772559/178192066-d52e0cf7-906e-4baa-80f3-4b49dde153c0.png" />
+</a>
+
+<a href="/ignite-shop" target="_blank">
+<img src="https://user-images.githubusercontent.com/71772559/178192378-234b9c46-7e31-47fb-8ddf-245617d8b198.png" />
+</a>
+
+<a href="https://www.figma.com/file/FxlDRKOmznBbTH8DsTgnZU/Ignite-Shop-2.0/duplicate" target="_blank">
+<img src="https://user-images.githubusercontent.com/71772559/178192253-4fe4757c-de57-4878-a38c-a483c25670b1.png" />
+</a>
 
 Feito com 💜 por Ivo Pereira ✌🏽 [Entre em contato ](https://www.linkedin.com/in/ivopereira-jr/)
