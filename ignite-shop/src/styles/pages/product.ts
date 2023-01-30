@@ -6,7 +6,8 @@ export const ProductContainer = styled('main', {
 	gridTemplateColumns: '1fr 1fr',
 	alignItems: 'stretch', // isso faz as duas colunas esticarem para ter a mesma altura
 	gap: '4rem',
-	margin: '0 auto'
+	margin: '0 auto',
+	paddingBottom: '4rem'
 });
 
 export const ImageContainer = styled('div', {
