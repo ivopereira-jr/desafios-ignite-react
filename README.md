@@ -8,7 +8,7 @@ Repositório destinado a armazenar todas as resoluções dos desafios que desenv
 
 ## Desafio 01 - To-Do List
 
-<img src="images/todo-list.png" align="center" />
+<img src=".github/todo-list.png" align="center" />
 
 Durante este desafio, utilizamos os conceitos básicos do React desenvolvendo do zero uma simples lista de tarefas com as opções de criar e apagar um item da lista.
 
@@ -37,7 +37,7 @@ Durante este desafio, utilizamos os conceitos básicos do React desenvolvendo do
 
 ## Desafio 02 - Coffee Delivery
 
-<img src="images/coffee-delivery.png" align="center" />
+<img src=".github/coffee-delivery.png" align="center" />
 
 Durante este desafio, utilizamos conceitos um pouco mais avançados desenvolvendo do zero uma aplicação de encomenda de cafés! A aplicação conta com 3 telas sendo a primeira uma tela de apresentação e também de listagem dos cafés disponíveis. Na segunda tela, o usuário precisa preencher um formulário com seus dados de endereço e ao lado direito é possível visualizar os itens do carrinho, podendo alterar a quantidade ou remover o mesmo. Na terceira e última tela, é exibido uma confirmação do pedido e também os detalhes de entrega da compra.
 
@@ -71,7 +71,7 @@ Durante este desafio, utilizamos conceitos um pouco mais avançados desenvolvend
 
 ## Desafio 03 - Github Blog
 
-<img src="images/github-blog.png" align="center" />
+<img src=".github/github-blog.png" align="center" />
 
 Durante este desafio, desenvolvemos uma aplicação que utiliza a API do GitHub para buscar issues de um repositório, dados do perfil e exibir elas como um blog.
 
@@ -105,7 +105,7 @@ Durante este desafio, desenvolvemos uma aplicação que utiliza a API do GitHub 
 
 ## Desafio 04 - Ignite Shop 2.0
 
-<img src="images/ignite-shop.png" align="center" />
+<img src=".github/ignite-shop.png" align="center" />
 
 Durante este desafio foram desenvolvidas algumas funcionalidades extras no projeto que foi desenvolvido no módulo 4.
 
