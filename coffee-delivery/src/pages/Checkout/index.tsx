@@ -80,14 +80,14 @@ export function Checkout() {
     <div className='container'>
       {cartItems.length != 0 ? (
         <S.CheckoutContainer>
-          <S.CheckoutFormContainer>
-            <S.ContainerTitle>Complete seu pedido</S.ContainerTitle>
+          <FormProvider {...newOrderForm}>
+            <S.CheckoutFormContainer>
+              <S.ContainerTitle>Complete seu pedido</S.ContainerTitle>
 
-            <form
-              id='formCheckoutOrderInfos'
-              onSubmit={handleSubmit(handleCreateNewCycle)}
-            >
-              <FormProvider {...newOrderForm}>
+              <form
+                id='formCheckoutOrderInfos'
+                onSubmit={handleSubmit(handleCreateNewCycle)}
+              >
                 <S.AddressToDelivery>
                   <SectionTitle
                     bgColor={colors['brand-yellow-dark']}
@@ -109,15 +109,15 @@ export function Checkout() {
 
                   <PaymentFormFields />
                 </S.Payment>
-              </FormProvider>
-            </form>
-          </S.CheckoutFormContainer>
+              </form>
+            </S.CheckoutFormContainer>
 
-          <S.CoffeesSelected>
-            <S.ContainerTitle>Cafés selecionados</S.ContainerTitle>
+            <S.CoffeesSelected>
+              <S.ContainerTitle>Cafés selecionados</S.ContainerTitle>
 
-            <Cart onLoading={loading} />
-          </S.CoffeesSelected>
+              <Cart onLoading={loading} />
+            </S.CoffeesSelected>
+          </FormProvider>
         </S.CheckoutContainer>
       ) : (
         <S.CartEmpty>

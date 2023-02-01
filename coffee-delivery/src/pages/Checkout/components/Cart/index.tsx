@@ -1,3 +1,4 @@
+import { useFormContext } from 'react-hook-form';
 import { useCart } from '../../../../hooks/UseCart';
 
 import { CoffeeCardInCart } from '../CoffeeCardInCart';
@@ -12,6 +13,7 @@ interface CartProps {
 
 export function Cart({ onLoading }: CartProps) {
   const { cartItems } = useCart();
+  const { formState } = useFormContext();
 
   const productsCostTotal = cartItems?.reduce(
     (total, product) => total + product.amount * product.price,
@@ -50,9 +52,9 @@ export function Cart({ onLoading }: CartProps) {
         <S.ButtonConfirmOrder
           form='formCheckoutOrderInfos'
           type='submit'
-          disabled={onLoading}
+          disabled={onLoading || !formState?.isValid}
         >
-          {onLoading ? <S.ButtonSpinner></S.ButtonSpinner> : 'confirmar pedido'}
+          {onLoading ? <S.ButtonSpinner /> : 'confirmar pedido'}
         </S.ButtonConfirmOrder>
       </S.CartTotalValues>
     </S.CartContainer>
