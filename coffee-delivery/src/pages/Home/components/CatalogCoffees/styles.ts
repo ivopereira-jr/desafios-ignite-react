@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const CatalogCoffeesContainer = styled.section`
+export const CatalogCoffeesContainer = styled.section``;
+
+export const CatalogCoffesWrapper = styled.div`
   width: 100%;
   height: auto;
   margin-top: 2rem;
