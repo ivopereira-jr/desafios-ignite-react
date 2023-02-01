@@ -1,3 +1,4 @@
+import { ChangeEvent, useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { getZipCodeInfo } from '../../../../services/getZipCodeInfo';
 
@@ -11,32 +12,79 @@ export interface ErrorsType {
   };
 }
 
+interface zipCodeResponseProps {
+  cep: string;
+  logradouro: string;
+  complemento: string;
+  bairro: string;
+  localidade: string;
+  uf: string;
+}
+
 export function AddressFormFields() {
+  const [notFoundZipCode, setNotFoundZipCode] = useState(false);
+
   const { register, formState, setValue, setFocus } = useFormContext();
   const { errors } = formState as unknown as ErrorsType;
 
-  async function checkZipcode(e: React.ChangeEvent<HTMLInputElement>) {
-    const cep = e.target.value.replace(/\D/g, '');
-    const { data } = await getZipCodeInfo.get(`${cep}/json`);
+  function formatterZipCode(e: ChangeEvent<HTMLInputElement>) {
+    const zipCode = e.target.value.replace(/\D/g, '');
+    const zipCodeFormatted = zipCode.replace(/^(\d{5})(\d)/, '$1-$2');
+
+    setValue('zipCode', zipCodeFormatted);
+  }
+
+  function changeFocusInput(data: zipCodeResponseProps) {
+    if (data.logradouro) {
+      setFocus('addressNumber');
+    } else {
+      setFocus('address');
+    }
+  }
+
+  async function getDataByZipCode(e: React.ChangeEvent<HTMLInputElement>) {
+    const inputValue = e.target.value;
+
+    if (inputValue.length < 8) {
+      setNotFoundZipCode(true);
+      return;
+    } else {
+      setNotFoundZipCode(false);
+    }
+
+    const zipCode = inputValue.replace(/\D/g, '');
+    const { data } = await getZipCodeInfo.get(`${zipCode}/json`);
+
+    if (data.erro) {
+      setNotFoundZipCode(true);
+    } else {
+      setNotFoundZipCode(false);
+    }
 
     setValue('address', data.logradouro);
     setValue('district', data.bairro);
     setValue('city', data.localidade);
     setValue('uf', data.uf);
-    setFocus('addressNumber');
+
+    changeFocusInput(data);
   }
 
   return (
     <S.AddressContainer>
       <S.InputWrapper className='zipCode'>
         <S.InputStyled
-          type='number'
+          type='text'
           placeholder='CEP'
+          maxLength={9}
           {...register('zipCode')}
-          onBlur={checkZipcode}
-          hasError={!!errors.zipCode}
+          onBlur={getDataByZipCode}
+          onChange={e => formatterZipCode(e)}
+          hasError={!!errors.zipCode || notFoundZipCode}
         />
         {errors.zipCode && <S.TextError>{errors.zipCode?.message}</S.TextError>}
+        {notFoundZipCode && (
+          <S.TextError>CEP inválido, tente novamente.</S.TextError>
+        )}
       </S.InputWrapper>
 
       <S.InputWrapper className='address'>
@@ -45,6 +93,7 @@ export function AddressFormFields() {
           placeholder='Rua'
           {...register('address')}
           hasError={!!errors.address}
+          disabled={notFoundZipCode}
         />
         {errors.address && <S.TextError>{errors.address?.message}</S.TextError>}
       </S.InputWrapper>
@@ -55,6 +104,7 @@ export function AddressFormFields() {
           placeholder='Número'
           {...register('addressNumber')}
           hasError={!!errors.addressNumber}
+          disabled={notFoundZipCode}
         />
         {errors.addressNumber && (
           <S.TextError>{errors.addressNumber?.message}</S.TextError>
@@ -69,6 +119,7 @@ export function AddressFormFields() {
             className='inputComplement'
             {...register('complement')}
             hasError={!!errors.complement}
+            disabled={notFoundZipCode}
           />
           <span>Opcional</span>
         </S.InputContainer>
@@ -83,6 +134,7 @@ export function AddressFormFields() {
           placeholder='Bairro'
           {...register('district')}
           hasError={!!errors.district}
+          disabled={notFoundZipCode}
         />
         {errors.district && (
           <S.TextError>{errors.district?.message}</S.TextError>
@@ -95,6 +147,7 @@ export function AddressFormFields() {
           placeholder='Cidade'
           {...register('city')}
           hasError={!!errors.city}
+          disabled={notFoundZipCode}
         />
         {errors.city && <S.TextError>{errors.city?.message}</S.TextError>}
       </S.InputWrapper>
@@ -106,6 +159,7 @@ export function AddressFormFields() {
           className='inputUf'
           {...register('uf')}
           hasError={!!errors.uf}
+          disabled={notFoundZipCode}
         />
         {errors.uf && <S.TextError>{errors.uf?.message}</S.TextError>}
       </S.InputWrapper>
