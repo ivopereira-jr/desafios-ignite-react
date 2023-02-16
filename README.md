@@ -156,6 +156,6 @@ Durante este desafio, adicionamos dois componentes (Toast e Tooltip) ao design s
 <img src="https://user-images.githubusercontent.com/71772559/178192253-4fe4757c-de57-4878-a38c-a483c25670b1.png" />
 </a>
 
-<br/>
+&nbsp;
 
 Feito com 💜 por Ivo Pereira ✌🏽 [Entre em contato ](https://www.linkedin.com/in/ivopereira-jr/)
