@@ -1,10 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { Box, MultiStep, MultiStepProps } from '@jr-ignite-ui/react'
+import type { Meta, StoryObj } from "@storybook/react";
+import { Box, MultiStep, MultiStepProps } from "@jr-ignite-ui/react";
 
 export default {
-  title: 'Form/MultiStep',
+  title: "Form/MultiStep",
   component: MultiStep,
-
   args: {
     size: 4,
     currentStep: 1,
@@ -14,19 +13,19 @@ export default {
       return (
         <Box
           as="label"
-          css={{ display: 'flex', flexDirection: 'row', gap: '$2' }}
+          css={{ display: "flex", flexDirection: "row", gap: "$2" }}
         >
           {Story()}
         </Box>
-      )
+      );
     },
   ],
-} as Meta<MultiStepProps>
+} as Meta<MultiStepProps>;
 
-export const Primary: StoryObj<MultiStepProps> = {}
+export const Primary: StoryObj<MultiStepProps> = {};
 
 export const Full: StoryObj<MultiStepProps> = {
   args: {
     currentStep: 4,
   },
-}
+};
