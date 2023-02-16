@@ -8,7 +8,7 @@ Repositório destinado a armazenar todas as resoluções dos desafios que desenv
 
 ## Desafio 01 - To-Do List
 
-<img src=".github/todo-list.png" align="center" />
+<img src=".github/images/todo-list.png" align="center" />
 
 Durante este desafio, utilizamos os conceitos básicos do React desenvolvendo do zero uma simples lista de tarefas com as opções de criar e apagar um item da lista.
 
@@ -37,7 +37,7 @@ Durante este desafio, utilizamos os conceitos básicos do React desenvolvendo do
 
 ## Desafio 02 - Coffee Delivery
 
-<img src=".github/coffee-delivery.png" align="center" />
+<img src=".github/images/coffee-delivery.png" align="center" />
 
 Durante este desafio, utilizamos conceitos um pouco mais avançados desenvolvendo do zero uma aplicação de encomenda de cafés! A aplicação conta com 3 telas sendo a primeira uma tela de apresentação e também de listagem dos cafés disponíveis. Na segunda tela, o usuário precisa preencher um formulário com seus dados de endereço e ao lado direito é possível visualizar os itens do carrinho, podendo alterar a quantidade ou remover o mesmo. Na terceira e última tela, é exibido uma confirmação do pedido e também os detalhes de entrega da compra.
 
@@ -71,7 +71,7 @@ Durante este desafio, utilizamos conceitos um pouco mais avançados desenvolvend
 
 ## Desafio 03 - Github Blog
 
-<img src=".github/github-blog.png" align="center" />
+<img src=".github/images/github-blog.png" align="center" />
 
 Durante este desafio, desenvolvemos uma aplicação que utiliza a API do GitHub para buscar issues de um repositório, dados do perfil e exibir elas como um blog.
 
@@ -105,7 +105,7 @@ Durante este desafio, desenvolvemos uma aplicação que utiliza a API do GitHub 
 
 ## Desafio 04 - Ignite Shop 2.0
 
-<img src=".github/ignite-shop.png" align="center" />
+<img src=".github/images/ignite-shop.png" align="center" />
 
 Durante este desafio foram desenvolvidas algumas funcionalidades extras no projeto que foi desenvolvido no módulo 4.
 
@@ -130,5 +130,32 @@ Durante este desafio foram desenvolvidas algumas funcionalidades extras no proje
 <a href="https://www.figma.com/file/FxlDRKOmznBbTH8DsTgnZU/Ignite-Shop-2.0/duplicate" target="_blank">
 <img src="https://user-images.githubusercontent.com/71772559/178192253-4fe4757c-de57-4878-a38c-a483c25670b1.png" />
 </a>
+
+&nbsp;
+
+## Desafio 05 - Design System
+
+<img src=".github/images/design-system.png" align="center" />
+
+Durante este desafio, adicionamos dois componentes (Toast e Tooltip) ao design system que foi desenvolvido durante o módulo 5.
+
+### 🛠️ Nesse projeto foi utilizado
+
+- [Storybook](https://storybook.js.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Stitches](https://stitches.dev/)
+- [Radix](https://www.radix-ui.com/)
+
+<br />
+
+<a href="/design-system" target="_blank">
+<img src="https://user-images.githubusercontent.com/71772559/178192378-234b9c46-7e31-47fb-8ddf-245617d8b198.png" />
+</a>
+
+<a href="https://www.figma.com/file/cowwFHJimoyQomSAynMjGz/Ignite-Call?node-id=4%3A412" target="_blank">
+<img src="https://user-images.githubusercontent.com/71772559/178192253-4fe4757c-de57-4878-a38c-a483c25670b1.png" />
+</a>
+
+<br/>
 
 Feito com 💜 por Ivo Pereira ✌🏽 [Entre em contato ](https://www.linkedin.com/in/ivopereira-jr/)
