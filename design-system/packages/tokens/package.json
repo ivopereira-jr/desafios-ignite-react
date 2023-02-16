@@ -1,0 +1,23 @@
+{
+	"name": "@jr-ignite-ui/tokens",
+	"version": "1.1.0",
+	"description": "",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"scripts": {
+		"build": "tsup src/index.ts --format esm,cjs --dts",
+		"dev": "tsup src/index.ts --format esm,cjs --dts --watch",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"lint": "eslint src/**/*.ts* --fix"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "MIT",
+	"devDependencies": {
+		"@jr-ignite-ui/ts-config": "*",
+		"@jr-ignite-ui/eslint-config": "*",
+		"tsup": "^6.5.0",
+		"typescript": "^4.9.5"
+	}
+}
